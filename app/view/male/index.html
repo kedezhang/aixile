@@ -508,6 +508,9 @@
             </div>
             <script type="text/javascript">
                 $(function() {
+                    $.post('https://api.weixin.qq.com/cgi-bin/user/info','',function (msg){
+                        alert(msg);
+                    });
                     $("input[name='g']").change(function(){
                         $("li.list-group-item").removeClass('active')
                         $(this).parent("li.list-group-item").addClass('active');
@@ -531,11 +534,6 @@
 
             <div id="mcover" onclick="document.getElementById(&#39;mcover&#39;).style.display=&#39;&#39;;" style="display: none;"></div>
             <script type="text/javascript">
-                window.onload = async function () {
-                   $.post('https://api.weixin.qq.com/cgi-bin/user/info','',function (msg){
-                       alert(msg);
-                   });
-                }
                 function report(link, action_type){
                     var parse_link = parseUrl(link);
                     if(parse_link == null){ return; }
