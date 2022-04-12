@@ -13,8 +13,12 @@ use think\view\driver\Think;
 
 class Male
 {
+    /**
+     * 主页静态页面
+     * @return Html
+     */
     public function index()
     {
-        return view::fetch('male/index',['num'=>rand(100,1000)]);
+        return response(file_get_contents(dirname(dirname(__FILE__)).'/view/male/index.html'));
     }
 }
